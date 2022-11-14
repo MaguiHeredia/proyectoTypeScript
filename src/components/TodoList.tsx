@@ -10,7 +10,8 @@ interface TodoListProps {
 
 export const TodoList: React.FC<TodoListProps> = ({ todos, toggleComplete, onRemoveTodo, editTodo }) => {
   return (
-    <ul>
+    <div className="container-scroll">
+      <ul className='container-todoList'>
      {todos.map(todo => (
        <TodoListItem
           key={todo.text}
@@ -20,6 +21,8 @@ export const TodoList: React.FC<TodoListProps> = ({ todos, toggleComplete, onRem
           editTodo={editTodo}
         />
      ))}
-    </ul>
+    </ul> 
+    
+    </div>
   );
 };

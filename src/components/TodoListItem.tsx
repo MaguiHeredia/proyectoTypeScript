@@ -18,12 +18,13 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({ todo, toggleComplete
 
   const onEdit = () => {
     console.log('edit');
+    setIsEditOn(!isEditOn)
   }
 
   const onTodoUpdate = (e: any) => {
+    console.log('entree')
     let text = e.target.value;
     setInputText(text);
-    editTodo(text);
   }
 
   const dropdownOptions: Array<Option> = [
@@ -41,15 +42,38 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({ todo, toggleComplete
   return (
     <li className={todo.complete? "todo-row completed" : "todo-row"}>
       <label>
-      <input
+        {isEditOn ? 
+        <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
+          <input
         type="checkbox"
         onChange={() => toggleComplete(todo)}
         checked={todo.complete}
+        style={{border: 'none !important', marginRight: '7px'}}
         />
-        {isEditOn ? <input className="edit-input" type="text" value={inputText} onChange={(e) => onTodoUpdate(e)}/> : todo.text}
+          <input className="edit-input" type="text" value={inputText} onChange={(e) => onTodoUpdate(e)}/> 
+          <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-end'}}>
+            {todo.text !== inputText ? <button onClick={(e) => editTodo(inputText, todo)} className='edit-button'>
+            <img style={{width: '18px', filter: 'invert(100%)'}} src='https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png'></img>
+            </button> :
+            <button onClick={(e) => editTodo(inputText, todo)} className='edit-button' disabled style={{backgroundColor: 'rgba(160, 153, 153, 1)'}}>
+            <img style={{width: '18px', filter: 'invert(100%)'}} src='https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png'></img>
+            </button>
+            }
+            
+          </div>
+        </div>
+        : <div><input
+        type="checkbox"
+        onChange={() => toggleComplete(todo)}
+        checked={todo.complete}
+        style={{border: 'none !important', marginRight: '6px'}}
+        />
+        {todo.text}
+        </div>}
       </label>
       <Dropdown
         options={dropdownOptions}
+
       />
     </li>
   )

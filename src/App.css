@@ -1,23 +1,15 @@
 * {
-  font-family: 'Open Sans';
+  font-family: 'Red Hat Display', sans-serif;
 }
 body {
-  background: linear-gradient(
-    90deg,
-    rgba(105, 20, 204, 1) 0%,
-    rgba(44, 114, 251, 1) 100%
-  );
+  font-family: 'Red Hat Display', sans-serif;
+  
 }
 .todo-app {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 500px;
-  min-height: 500px;
-  background: white;
-  text-align: center;
-  margin: 128px auto;
-  border-radius: 5px;
+   background-image: url('https://i0.wp.com/wokii.com/wp-content/uploads/2021/03/frutas-verduras-temporada-marzo-scaled.jpg?fit=2560%2C1739&ssl=1'); 
+  background-color: rgb(21, 18, 28);
+  background-size: 100%;
+  min-height: 100vh;
 }
 
 h1 {
@@ -27,48 +19,37 @@ h1 {
 
 .completed {
   text-decoration: line-through;
-  opacity: 0.4;
+  opacity: 0.6;
+  background-color: 
+  rgb(255, 241, 189);
 }
 
 .todo-form {
-  margin-bottom: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  align-items: center;
 }
 
 .todo-button {
-  padding: 16px;
-  border: none;
-  border-radius: 0 20px 20px 0;
-  cursor: pointer;
-  outline: none;
-  background: linear-gradient(
-    90deg,
-    rgba(105, 20, 204, 1) 0%,
-    rgba(44, 114, 251, 1) 100%
-  );
-  color: #fff;
-  text-transform: capitalize;
+  color: rgb(255, 255, 255);
+  background-color: rgba(97, 165, 45, 1);
+  border-radius: 5px;
+  padding: 7px 10px;
+  border: none !important;
+  margin-left: 10px;
 }
 
 .todo-input {
-  padding: 15px 32px 15px 16px;
-  border-radius: 20px 0 0 20px;
-  border: 1px solid #dfe1e5;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  width: 350px;
+  padding: 7px;
+  border: none !important;
   outline: none;
-  width: 320px;
-  background: transparent;
-}
-
-.todo-input.edit {
-  border: 2px solid #149fff;
-}
-
-.todo-button.edit {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
-  padding: 16px 22px;
 }
 
 .todo-container {
@@ -87,23 +68,21 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  margin: 4px auto;
-
-  padding: 16px;
-  border-radius: 20px;
-  width: 80%;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  margin-bottom: 10px;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  padding: 4px;
+  color: #fff;
+  width: 460px;
+  font-size: 20px;
 }
 
-.todo-row input {
-  margin-right: 10px;
-}
-
-/* Dropdown Styling */
 .dropdown {
   position: relative;
   display: inline-block;
   text-align: left;
+  cursor: pointer
 }
 
 .dropdown-list-container {
@@ -129,6 +108,11 @@ ul {
 
 .edit-input {
   border: none;
+  background-color: rgb(69, 147, 131);
+  color: white;
+  width: 360px;
+  outline: none;
+  padding: 0;
 }
 
 .red {
@@ -137,4 +121,58 @@ ul {
 
 .blue {
   color: blue;
+}
+.edit-button{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background: rgb(104, 194, 88);
+  text-transform: capitalize;
+  margin-right: 10px;
+
+}
+#button-drop{
+  background-color: white !important;
+  color: black;
+  border: none;
+}
+#button-drop1{
+  background-color: white !important;
+  color: black;
+  border: none;
+}
+#button-drop2{
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.container-scroll{
+  margin: 100px 0 0 0,;
+  max-height: 420px;
+  background: transparent;
+  overflow-y: scroll;
+}
+.container-todoList{
+  background-color: rgba(238, 156, 79, 1);
+  padding: 20px;
+  height: auto;
+  min-height: 430px;
+  width: 490px;
+}
+.container-scroll::-webkit-scrollbar {
+  width: 7px;             
+  
+}
+
+.container-scroll::-webkit-scrollbar-track {
+  background: rgba(238, 156, 79, 1);
+  border-radius: '0px 5px 5px 0px';      
+}
+
+.container-scroll::-webkit-scrollbar-thumb {
+  background-color: white;    
+  border-radius: 20px;       
+  border: 3px solid white;  
 }
