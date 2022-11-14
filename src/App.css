@@ -40,6 +40,11 @@ h1 {
   padding: 7px 10px;
   border: none !important;
   margin-left: 10px;
+  transition: all 500ms;
+}
+
+.todo-button:hover{
+  transform: scale(1.1);
 }
 
 .todo-input {
@@ -108,7 +113,7 @@ ul {
 
 .edit-input {
   border: none;
-  background-color: rgb(69, 147, 131);
+  background-color: rgba(238, 156, 79, 1);
   color: white;
   width: 360px;
   outline: none;
